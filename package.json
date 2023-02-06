@@ -20,6 +20,9 @@
     "HTML",
     "Webapp"
   ],
+  "bin": {
+    "create-js-app": "bin/index.js"
+  },
   "author": "Martin Boudreau",
   "license": "ISC",
   "bugs": {
