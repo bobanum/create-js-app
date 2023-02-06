@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobanum/js-app.git"
+    "url": "git+https://github.com/bobanum/create-js-app.git"
   },
   "keywords": [
     "Javascript",
@@ -24,7 +24,7 @@
   "author": "Martin Boudreau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bobanum/js-app/issues"
+    "url": "https://github.com/bobanum/create-js-app/issues"
   },
-  "homepage": "https://github.com/bobanum/js-app#readme"
+  "homepage": "https://github.com/bobanum/create-js-app#readme"
 }
