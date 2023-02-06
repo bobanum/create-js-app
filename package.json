@@ -1,0 +1,29 @@
+{
+  "name": "@bobanum/create-js-app",
+  "version": "0.0.1",
+  "description": "Base for starting a new Javascript project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-js-app": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobanum/js-app.git"
+  },
+  "keywords": [
+    "Javascript",
+    "SASS",
+    "SCSS",
+    "CSS",
+    "POO",
+    "HTML",
+    "Webapp"
+  ],
+  "author": "Martin Boudreau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobanum/js-app/issues"
+  },
+  "homepage": "https://github.com/bobanum/js-app#readme"
+}
