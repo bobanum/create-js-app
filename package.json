@@ -1,6 +1,6 @@
 {
   "name": "@bobanum/create-js-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Base for starting a new Javascript project",
   "main": "index.js",
   "scripts": {
