@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+:root {
+  --hue: 210;
+  --sat: 50%;
+  --lum: 50%;
+  --font-family-text: Arial, Helvetica, sans-serif;
+  --font-family-title: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --interface-width: 960px;
+  --color-text: #333;
+  --color-title: hsl(var(--hue), var(--sat), 30%);
+}
+
+html {
+  height: 100%;
+  font-family: var(--font-family-text);
+  color: var(--color-text);
+}
+
+body {
+  height: 100%;
+  background-color: hsl(var(--hue), var(--sat), 10%);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h5,
+h5,
+h6,
+figcaption,
+th,
+caption {
+  font-family: var(--font-family-title);
+  color: var(--color-title);
+  line-height: 1;
+}
+
+.interface {
+  min-height: 100%;
+  width: var(--interface-width);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: "header" "nav" "app" "footer";
+  margin: 0 auto;
+  background-color: hsl(var(--hue), var(--sat), 100%);
+}
+.interface > header,
+.interface > footer {
+  background-color: hsl(var(--hue), var(--sat), var(--lum));
+  padding: 1em;
+  color: #fff;
+}
+.interface > header h1,
+.interface > footer h1 {
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  color: var(--color-title);
+  line-height: 1;
+}
+nav a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1em;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+nav li {
+  display: flex;
+}
+nav li:hover {
+  background-color: hsl(var(--hue), var(--sat), 85%);
+}
+.interface > nav {
+  background-color: hsl(var(--hue), var(--sat), 90%);
+  height: 2em;
+}
+
+#app {
+  padding: 2em;
+}

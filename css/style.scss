@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import "variables";
+
+html {
+    height: 100%;
+    font-family: var(--font-family-text);
+    color: var(--color-text);
+}
+
+body {
+    height: 100%;
+    background-color: hsl(var(--hue), var(--sat), 10%);
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h5,
+h5,
+h6,
+figcaption,
+th,
+caption {
+    font-family: var(--font-family-title);
+    color: var(--color-title);
+    line-height: 1;
+}
+
+@import "interface";
+@import "nav";
+@import "app";

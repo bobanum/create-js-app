@@ -1,0 +1,19 @@
+.interface {
+    min-height: 100%;
+    width: var(--interface-width);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "header" "nav" "app" "footer";
+    margin: 0 auto;
+    background-color: hsl(var(--hue), var(--sat), 100%);
+
+    > header,
+    > footer {
+        background-color: hsl(var(--hue), var(--sat), var(--lum));
+        padding: 1em;
+        color: #fff;
+        h1 {
+            color: inherit;
+        }
+    }
+}

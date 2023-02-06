@@ -1,0 +1,28 @@
+nav {
+    display: flex;
+    color: var(--color-title);
+    line-height: 1;
+    a {
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 1em;
+    }
+    ul {
+        display: flex;
+        list-style-type: none;
+    }
+    li {
+        display: flex;
+        &:hover {
+            background-color: hsl(var(--hue), var(--sat), 85%);
+        }
+    }
+    .interface > & {
+        background-color: hsl(var(--hue), var(--sat), 90%);
+        height: 2em;
+    }
+}
