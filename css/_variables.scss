@@ -1,10 +1,10 @@
 :root {
-    --hue: 210;
-    --sat: 50%;
-    --lum: 50%;
+    --h: 210;
+    --s: 50%;
+    --l: 50%;
     --font-family-text: Arial, Helvetica, sans-serif;
     --font-family-title: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     --interface-width: 960px;
     --color-text: #333;
-    --color-title: hsl(var(--hue), var(--sat), 30%);
+    --color-title: hsl(var(--h), var(--s), 30%);
 }

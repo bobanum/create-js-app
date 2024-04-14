@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
- <g>
-  <path d="m0 0v52c1.4803e-15 2.2091 1.7909 4 4 4h16c4.9029 0 9.3855 2.7709 11.578 7.1562l0.42188 0.84375 0.42188-0.84375c2.1927-4.3853 6.6752-7.1562 11.578-7.1562h16c2.2091 0 4-1.7909 4-4v-52h-64zm26 4h8v3.0742c2.1242-1.9052 4.922-3.0742 8-3.0742h8c6.6274 0 12 5.3726 12 12v4h-8v-4c0-2.2091-1.7909-4-4-4h-8c-2.2091 0-4 1.7909-4 4v4c0 2.2091 1.7909 4 4 4h8c6.6274 0 12 5.3726 12 12v4c0 6.6274-5.3726 12-12 12h-8c-4.1757 0-7.8506-2.1354-10-5.3711-2.1494 3.2357-5.8243 5.3711-10 5.3711h-8c-6.6274 0-12-5.3726-12-12v-4h8v4c0 2.2091 1.7909 4 4 4h8c2.2091 0 4-1.7909 4-4v-36zm8 24.926v7.0742h4v4c0 2.2091 1.7909 4 4 4h8c2.2091 0 4-1.7909 4-4v-4c0-2.2091-1.7909-4-4-4h-8c-3.078 0-5.8758-1.169-8-3.0742z" fill="#f60"/>
- </g>
+<svg width="512" height="512" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <g fill-rule="evenodd">
+        <path d="m56.89 0-56.889 128 29.681 77.491-29.682 50.509 170.67 128-56.889 128h170.67l227.55-128v-128l-248.91-126.65-35.531-129.35z" fill="#c89800" fill-rule="evenodd" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal;paint-order:markers stroke fill"/>
+        <path d="m170.67 256-170.67-128v128zm56.89-256h170.67l-56.889 128 170.66 128h-170.66l-170.67-128zm113.78 256h-170.67l170.67 128-56.889 128h170.67l56.879-128z" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal;paint-order:markers stroke fill"/>
+    </g>
 </svg>

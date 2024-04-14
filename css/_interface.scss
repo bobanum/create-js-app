@@ -1,19 +1,41 @@
 .interface {
     min-height: 100%;
-    width: var(--interface-width);
+    // width: var(--interface-width);
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-    grid-template-areas: "header" "nav" "app" "footer";
     margin: 0 auto;
-    background-color: hsl(var(--hue), var(--sat), 100%);
+    background-color: hsl(var(--h), var(--s), 100%);
 
     > header,
     > footer {
-        background-color: hsl(var(--hue), var(--sat), var(--lum));
+        background-color: hsl(var(--h), var(--s), var(--l));
         padding: 1em;
         color: #fff;
+        grid-column: 1 / -1;
+
         h1 {
             color: inherit;
         }
+
+    }
+    & > nav {
+        --background-color: hsl(var(--h), var(--s), 90%);
+        --highlight: hsl(var(--h), var(--s), 85%);
+        --highlight-text: hsl(var(--h), var(--s), 10%);
+    }
+
+    @media screen and (width <=40em) {
+        grid-template-columns: 3em 1fr;
+        grid-template-rows: auto 1fr auto;
+
+        > header {
+            grid-column: 2;
+        }
+
+        > nav {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
     }
 }

@@ -11,15 +11,18 @@ function runCommand(command) {
     }
     return true;
 }
-const repoName = process.argv[2] || 'js-app';
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/bobanum/create-js-app ${repoName}`;
-const installDepsCommand = `cd ${repoName} && npm install`;
+const userName = "bobanum";
+const repoName = process.env.npm_package_name.split(/\//).slice(-1)[0].replace(/^create-/, "");
+const projectName = process.argv[2] || repoName;
 
-console.log(`Cloning '${repoName}'`);
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/${userName}/${repoName} ${projectName}`;
+const installDepsCommand = `cd ${projectName} && npm install`;
+
+console.log(`Cloning '${projectName}'`);
 const checkedOut = runCommand(gitCheckoutCommand);
 if (!checkedOut) process.exit(-1);
 
-console.log(`Installing dependencies for '${repoName}'`);
+console.log(`Installing dependencies for '${projectName}'`);
 const installedDeps = runCommand(installDepsCommand);
 if (!installedDeps) process.exit(-1);
 

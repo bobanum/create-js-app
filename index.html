@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="module">
         import App from "./src/App.js";
+        import types from "./src/types.js";
         App.load().then(() => {
-            console.log("Ready");
+            // App.addTypes(types);
         });
     </script>
     <title>Application Javascript</title>
@@ -17,20 +18,27 @@
 <body>
     <div class="interface">
         <header><h1>Application Javascript</h1></header>
-        <nav>
-            <ul>
-                <li><a href="index.html"><span class="material-icons">home</span></a></li>
-                <li><a href="#">Incidunt</a></li>
+        <nav tabindex="1">
+            <!-- <ul>
+                <li><a href="index.html"><span class="material-icons">home</span><span class="label">Home</span></a></li>
+                <li><a href="#"><span class="material-icons">note_add</span><span class="label">New Project</span></a>
+                    <ul>
+                        <li><a href="#">Square</a>
+                            <ul>
+                                <li><a href="#">Straight</a></li>
+                                <li><a href="#">90&deg;</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="#">Laudantium Blanditiis!</a></li>
                 <li><a href="#">Labore</a></li>
                 <li><a href="#">Neque</a></li>
-            </ul>
+            </ul> -->
         </nav>
         <div id="app">
-            <h1>Autem assumenda doloremque voluptate!</h1>
-            <p>Corporis laboriosam consectetur necessitatibus voluptatum blanditiis provident expedita nemo non maxime, quasi minima magnam unde reiciendis harum temporibus ipsam error illo inventore natus dicta? Saepe maxime debitis sunt vitae illo.</p>
         </div>
-        <footer><p>&copy; Application Javascript</p></footer>
+        <footer><p>&copy; Tesselations</p></footer>
     </div>
 </body>
 </html>

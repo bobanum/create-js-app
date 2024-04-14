@@ -1,0 +1,15 @@
+<svg width="512" height="512" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <pattern id="pattern5126" width="28" height="28" patternUnits="userSpaceOnUse">
+            <g>
+                <rect stroke="black" stroke-width="2" x="0" y="0" width="28" height="28" fill="#ff0"/>
+                <path transform="translate(-2, -10) scale(.1)" d="m192 160 83.138 48v96l-83.138 48-83.138-48v-96z" fill="#800000"/>
+            </g>
+        </pattern>
+    </defs>
+    <g>
+        <rect x="32" y="96" width="288" height="288" fill="url(#pattern5126)"/>
+        <ellipse id="path6167" cx="352" cy="272" rx="64" ry="80" fill="#00f" fill-rule="evenodd" stop-color="#000000" style="-inkscape-stroke:none;paint-order:markers stroke fill"/>
+        <use transform="translate(0,-80)" xlink:href="#path6167"/>
+    </g>
+</svg>

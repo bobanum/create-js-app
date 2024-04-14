@@ -1,15 +1,15 @@
 {
-  "name": "@bobanum/create-js-app",
-  "version": "0.0.2",
-  "description": "Base for starting a new Javascript project",
+  "name": "@bobanum/tesselations",
+  "version": "0.0.3",
+  "description": "Tesselations Web App",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create-js-app": "echo \"Error: no test specified\" && exit 1"
+    "tesselations": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobanum/create-js-app.git"
+    "url": "git+https://github.com/bobanum/tesselations.git"
   },
   "keywords": [
     "Javascript",
@@ -24,7 +24,7 @@
   "author": "Martin Boudreau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bobanum/create-js-app/issues"
+    "url": "https://github.com/bobanum/tesselations/issues"
   },
-  "homepage": "https://github.com/bobanum/create-js-app#readme"
+  "homepage": "https://github.com/bobanum/tesselations#readme"
 }
