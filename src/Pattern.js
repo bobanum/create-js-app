@@ -1,3 +1,6 @@
+/**
+ * Represents a pattern.
+ */
 class Pattern {
 	constructor() {
 		this.pattern = [];

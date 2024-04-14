@@ -4,7 +4,15 @@ import Svg from "./Svg/Svg.js";
 import Shape from "./Svg/Shape.js";
 import Segment from "./Svg/Segment.js";
 import Point from "./Svg/Point.js";
+
+/**
+ * Represents the main application class.
+ */
 export default class App {
+    /**
+     * Loads the application.
+     * @returns {Promise} A promise that resolves when the application is loaded.
+     */
     static load() {
         return new Promise(resolve => {
             this.addMenu();
@@ -21,6 +29,11 @@ export default class App {
             resolve();
         });
     }
+
+    /**
+     * Adds the menu to the application.
+     * @returns {App} The current instance of the App class.
+     */
     static addMenu() {
         const menu = new Menu();
         let menuItem = new MenuItem("home", ["Home", "home"], "/index.html");

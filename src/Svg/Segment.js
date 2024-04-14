@@ -1,8 +1,19 @@
 import { SvgElement } from "./Element.js";
 import Point from "./Point.js";
 
+/**
+ * Represents a segment in an SVG element.
+ */
 class Segment extends SvgElement {
 	name = "path";
+
+	/**
+	 * Creates a new Segment instance.
+	 * @param {Point} start - The starting point of the segment.
+	 * @param {Point} end - The ending point of the segment.
+	 * @param {Point|null} controlStart - The control point for the start of the segment (optional).
+	 * @param {Point|null} controlEnd - The control point for the end of the segment (optional).
+	 */
 	constructor(start, end, controlStart = null, controlEnd = null) {
 		super();
 		this.start = start;
@@ -10,12 +21,27 @@ class Segment extends SvgElement {
 		this.controlStart = controlStart;
 		this.controlEnd = controlEnd;
 	}
+
+	/**
+	 * Gets the x-coordinate of the segment.
+	 * @returns {number} The x-coordinate.
+	 */
 	get x() {
 		return this.start.end?.x || this.start.x;
 	}
+
+	/**
+	 * Gets the y-coordinate of the segment.
+	 * @returns {number} The y-coordinate.
+	 */
 	get y() {
 		return this.start.end?.y || this.start.y;
 	}
+
+	/**
+	 * Gets the type of the segment.
+	 * @returns {string} The segment type.
+	 */
 	get type() {
 		if (this.start instanceof Point) {
 			return 'M';
@@ -36,7 +62,13 @@ class Segment extends SvgElement {
 			return 'S';
 		}
 	}
-	toString(begin = 0) {	// 0: no beginning, 1: detached segment, 2: from the beginning
+
+	/**
+	 * Converts the segment to a string representation.
+	 * @param {number} begin - The beginning value (0: no beginning, 1: detached segment, 2: from the beginning).
+	 * @returns {string} The string representation of the segment.
+	 */
+	toString(begin = 0) {
 		const result = [];
 		if (begin === 1 || Point.isInstance(this.start)) {
 			result.push(`M ${this.start.end || this.start}`);
@@ -63,11 +95,20 @@ class Segment extends SvgElement {
 		}
 		return result.join(' ');
 	}
+
+	/**
+	 * Creates the DOM representation of the segment.
+	 * @returns {Element} The DOM element representing the segment.
+	 */
 	createDom() {
 		const result = super.createDom({ d: this.toString() });
-		
 		return result;
 	}
+
+	/**
+	 * Creates the SVG controls for the segment.
+	 * @returns {Element} The SVG controls element.
+	 */
 	svg_controls() {
 		const result = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 		if (Point.isInstance(this.start)) {
@@ -87,4 +128,5 @@ class Segment extends SvgElement {
 		return result;
 	}
 }
+
 export { Segment, Segment as default };

@@ -1,22 +1,35 @@
-import { SvgElement } from "./Element.js";
-
 /**
  * Represents a point in an SVG element.
  * @extends SvgElement
  */
-class Point extends SvgElement {
-	name = "circle";
-
+class Point {
+	_x = null;
+	_y = null;
+	_a = null;
+	_r = null;
 	/**
 	 * Creates a new Point instance.
 	 * @param {number} x - The x-coordinate of the point.
 	 * @param {number} y - The y-coordinate of the point.
 	 */
 	constructor(x = 0, y = 0) {
-		super();
 		this.x = x;
 		this.y = y;
 	}
+	get x() {
+		if (this._x === null) {
+			this._x = this._r * Math.cos(this._a);
+			this._y = this._r * Math.sin(this._a);
+		}
+		return this._x;
+	}
+	set x(value) {
+		if (value === this._x) return;
+		this._x = value;
+		this._a = null;
+		this._r = null;
+	}
+	
 
 	/**
 	 * Returns a string representation of the point.
