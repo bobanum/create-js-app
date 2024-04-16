@@ -1,7 +1,9 @@
+import Point from "../Geometry/Point.js";
+
 /**
  * Represents an SVG element.
  */
-class Element {
+class Element extends Point {
 	_dom = null;
 	name = "Element";
 
@@ -11,8 +13,9 @@ class Element {
 	 * @param {Object} attributes - The attributes of the SVG element.
 	 * @param {Array} children - The children of the SVG element.
 	 */
-	constructor(name = this.name, attributes = {}, children = []) {
-		this.name = name;
+	constructor(name, attributes = {}, children = []) {
+		super();	
+		this.name = this.name || name;
 		this.attributes = {};
 		for (let name in attributes) {
 			this.setAttribute(name, attributes[name]);

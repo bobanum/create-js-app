@@ -1,33 +1,33 @@
 import { SvgElement } from "./Element.js";
 
 /**
- * Represents a shape in SVG format.
+ * Represents a path in SVG format.
  * @extends SvgElement
  */
-class Shape extends SvgElement {
+class Path extends SvgElement {
 	/**
-	 * The name of the shape.
+	 * The name of the path.
 	 * @type {string}
 	 */
 	name = "path";
 
 	/**
-	 * Constructs a new Shape object.
+	 * Constructs a new path object.
 	 */
-	constructor() {
-		super();
+	constructor(x = 0, y = 0) {
+		super(x, y);
 		/**
-		 * The segments that make up the shape.
+		 * The segments that make up the path.
 		 * @type {Array}
 		 */
 		this.segments = [];
 	}
 
 	/**
-	 * Adds a segment to the shape.
+	 * Adds a segment to the path.
 	 * @param {Segment} segment - The segment to add.
 	 * @param {number|null} to - The index to insert the segment at. If null, the segment is appended to the end.
-	 * @returns {Shape} The updated Shape object.
+	 * @returns {Path} The updated path object.
 	 */
 	addSegment(segment, to = null) {
 		if (to) {
@@ -49,8 +49,8 @@ class Shape extends SvgElement {
 	}
 
 	/**
-	 * Creates the DOM representation of the shape.
-	 * @returns {Element} The DOM element representing the shape.
+	 * Creates the DOM representation of the path.
+	 * @returns {Element} The DOM element representing the path.
 	 */
 	createDom() {
 		const result = super.createDom();
@@ -59,7 +59,7 @@ class Shape extends SvgElement {
 	}
 
 	/**
-	 * Creates the SVG controls for the shape.
+	 * Creates the SVG controls for the path.
 	 * @returns {Element} The SVG controls element.
 	 */
 	svg_controls() {
@@ -71,4 +71,4 @@ class Shape extends SvgElement {
 	}
 }
 
-export { Shape, Shape as default };
+export { Path as Path, Path as default };

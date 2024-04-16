@@ -1,13 +1,11 @@
-class Hub {
-	constructor() {
-		this.subscribers = [];
-	}
+import Point from "./Svg/Point.js";
+import Segment from "./Svg/Segment.js";
 
-	subscribe(subscriber) {
-		this.subscribers.push(subscriber);
-	}
-
-	publish(data) {
-		this.subscribers.forEach(subscriber => subscriber(data));
+class Hub extends Point {
+	constructor(x = 0, y = 0) {
+		super(x, y);
+		this.segments = [new Segment(this)];
+		this.pivots = [];
 	}
 }
+export { Hub as default, Hub };
