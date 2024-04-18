@@ -34,6 +34,7 @@ class Svg extends SvgElement {
 		this._dom_defs = new SvgElement('defs');
 		let pattern = this._dom_defs.appendChild(new Pattern(28,28));
 		this._dom_background = new SvgElement('rect', { x: 0, y: 0, width: '100%', height: '100%', fill: `url(#${pattern.id})` });
+		this._dom_background.setAttribute('opacity', 0.1);
 		this._dom_content = new SvgElement('g', { class: 'content' });
 		this._dom_controls = new SvgElement('g', { class: 'controls' });
 		this.appendChild(this._dom_defs);

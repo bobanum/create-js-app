@@ -5,7 +5,6 @@ import Point from "../Geometry/Point.js";
  */
 class Element extends Point {
 	_dom = null;
-	name = "Element";
 
 	/**
 	 * Creates a new instance of the Element class.
@@ -15,7 +14,7 @@ class Element extends Point {
 	 */
 	constructor(name, attributes = {}, children = []) {
 		super();	
-		this.name = this.name || name;
+		this.name = name;
 		this.attributes = {};
 		for (let name in attributes) {
 			this.setAttribute(name, attributes[name]);
@@ -37,7 +36,19 @@ class Element extends Point {
 		}
 		return this._dom;
 	}
-
+	createElement(name, attributes = {}, children = [], parent) {
+		const result = document.createElementNS('http://www.w3.org/2000/svg', name);
+		for (let name in attributes) {
+			result.setAttribute(name, attributes[name]);
+		}
+		children.forEach(child => {
+			result.appendChild(child instanceof Element ? child.dom : child instanceof Node ? child : document.createTextNode(child));
+		});
+		if (parent) {
+			parent.appendChild(result);
+		}
+		return result;
+	}
 	/**
 	 * Creates the DOM representation of the SVG element.
 	 * @param {Object} extraAttributes - Additional attributes for the DOM element.
@@ -45,18 +56,10 @@ class Element extends Point {
 	 * @returns {Element} - The DOM element.
 	 */
 	createDom(extraAttributes = {}, extraChildren = []) {
-		const result = document.createElementNS('http://www.w3.org/2000/svg', this.name);
-		for (let name in this.attributes) {
-			result.setAttribute(name, this.attributes[name]);
-		}
+		const result = this.createElement(this.name, this.attributes, this.children);
 		for (let name in extraAttributes) {
 			result.setAttribute(name, extraAttributes[name]);
 		}
-
-		this.children.forEach(child => {
-			const childDom = child instanceof Element ? child.dom : child instanceof Node ? child : document.createTextNode(child);
-			result.appendChild(childDom);
-		});
 		extraChildren.forEach(child => {
 			result.appendChild(child instanceof Element ? child.dom : child instanceof Node ? child : document.createTextNode(child));
 		});

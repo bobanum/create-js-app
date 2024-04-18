@@ -2,120 +2,33 @@
  * Represents a point in an SVG element.
  * @extends SvgElement
  */
-class Point {
-	_x = null;
-	_y = null;
-	_a = null;
-	_r = null;
+class Point extends DOMPoint {
 	/**
-	 * Creates a new Point instance.
+	 * Creates a new this.constructor instance.
 	 * @param {number} x - The x-coordinate of the point.
 	 * @param {number} y - The y-coordinate of the point.
 	 */
 	constructor(x = 0, y = 0) {
-		this._x = x;
-		this._y = y;
+		super(x, y);
 	}
-	get x() {
-		if (this._x === null) {
-			this._x = this._r * Math.cos(this._a);
-			this._y = this._r * Math.sin(this._a);
-		}
-		return this._x;
+	matrixTransform(matrix) {
+		({x:this.x, y:this.y} = super.matrixTransform(matrix));
+		return this;
 	}
-	set x(value) {
-		if (value === this._x) return;
-		this._x = value;
-		this._a = null;
-		this._r = null;
+	translate(x, y) {
+		this.x += x;
+		this.y += y;
+		return this;
 	}
-	get y() {
-		if (this._y === null) {
-			this._x = this._r * Math.cos(this._a);
-			this._y = this._r * Math.sin(this._a);
-		}
-		return this._y;
+	rotate(angle, x = 0, y = 0) {
+		let matrix = new DOMMatrix().rotate(angle, x, y);
+		return this.matrixTransform(matrix);
 	}
-	set y(value) {
-		if (value === this._y) return;
-		this._y = value;
-		this._a = null;
-		this._r = null;
-	}
-	get a() {
-		if (this._a === null) {
-			this._r = Math.sqrt(this._x * this._x + this._y * this._y);
-			this._a = Math.atan2(this._y, this._x);
-		}
-		return this._a;
-	}
-	set a(value) {
-		if (value === this._a) return;
-		this._a = value;
-		this._x = null;
-		this._y = null;
-	}
-	get aDeg() {
-		return this.a * 180 / Math.PI;
-	}
-	set aDeg(value) {
-		this.a = value * Math.PI / 180;
-	}
-	get r() {
-		if (this._r === null) {
-			this._r = Math.sqrt(this._x * this._x + this._y * this._y);
-			this._a = Math.atan2(this._y, this._x);
-		}
-		return this._r;
-	}
-	set r(value) {
-		if (value === this._r) return;
-		this._r = value;
-		this._x = null;
-		this._y = null;
-	}
-	getCartesian() {
-		if (this._x === null) {
-			this.setCartesian();
-		}
-		return { x: this._x, y: this._y };
+	scale(scaleX, scaleY, x = 0, y = 0) {
+		let matrix = new DOMMatrix().scale(scaleX, scaleY, x, y);
+		return this.matrixTransform(matrix);
 	}
 
-	setCartesian(x, y) {
-		if (arguments.length === 0) {
-			this._x = this._r * Math.cos(this._a);
-			this._y = this._r * Math.sin(this._a);
-			return this;
-		}
-		this._x = x;
-		this._y = y;
-		this._a = this._r = null;
-		return this;
-	}
-	getPolar() {
-		if (this._r === null) {
-			this.setPolar();
-		}
-		return { r: this._r, a: this._a };
-	}
-	setPolar(r, a) {
-		if (arguments.length === 0) {
-			this._r = Math.sqrt(this._x * this._x + this._y * this._y);
-			this._a = Math.atan2(this._y, this._x);
-			return this;
-		}
-		this._r = r;
-		this._a = a;
-		this._x = this._y = null;
-		return this;
-	}
-	/**
-	 * Returns a string representation of the point.
-	 * @returns {string} The string representation of the point.
-	 */
-	toString() {
-		return `${this.x},${this.y}`;
-	}
 }
 
 export { Point, Point as default };

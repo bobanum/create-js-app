@@ -31,17 +31,18 @@ class Point extends SvgElement {
 	 * @returns {Element} The DOM element representing the point.
 	 */
 	createDom() {
-		const result = super.createDom({ cx: this.x, cy: this.y, r: 5, fill: 'black', 'fill-opacity': 0.5 });
+		const result = super.createDom({ cx: this.x, cy: this.y, r: 5 });
+		result.classList.add("point");
 		return result;
 	}
-
-	/**
-	 * Returns the SVG controls for the point.
-	 * @returns {Element} The SVG controls for the point.
-	 */
-	svg_controls() {
-		return this.dom;
+}
+class ControlPoint extends Point {
+	name = "rect";
+	createDom() {
+		const result = this.createElement(this.name, { x: this.x - 5, y: this.y - 5, width: 10, height: 10 });
+		return result;
 	}
 }
 
-export { Point, Point as default };
+
+export { Point, Point as default, ControlPoint};

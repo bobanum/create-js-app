@@ -1,4 +1,4 @@
-import Path from "./Svg/Path.js";
+import Path from "../Svg/Path.js";
 
 class Shape extends Path {
 	constructor(x, y) {

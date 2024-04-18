@@ -203,6 +203,32 @@ nav [data-icon]::before {
 
 svg {
   fill: transparent;
+}
+
+.anchor {
+  fill: #000;
+  fill-opacity: 1;
+}
+
+.control {
+  stroke: currentColor;
+  stroke-width: 1px;
+}
+.control.start {
+  color: #00f;
+}
+.control.end {
+  color: #0f0;
+}
+.control line {
+  stroke: currentColor;
+}
+.control.virtual {
+  stroke-dasharray: 1;
+}
+
+path {
+  fill: transparent;
   stroke: #000;
-  stroke-width: 2;
+  stroke-width: 3;
 }

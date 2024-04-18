@@ -1,4 +1,4 @@
-import Point from "./Geometry/Point.js";
+import Point from "../Geometry/Point.js";
 
 class Pivot extends Point {
 	constructor(x = 0, y = 0) {

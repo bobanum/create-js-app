@@ -1,4 +1,5 @@
 import { SvgElement } from "./Element.js";
+import Line from "./Line.js";
 import Point from "./Point.js";
 
 /**
@@ -19,7 +20,6 @@ class Segment extends SvgElement {
 	 */
 	constructor(start, end = null, controlStart = null, controlEnd = null) {
 		super(start.x, start.y);
-		console.log(this.name);
 		this.origin = start.origin || start;
 		this.start = start;
 		this.end = end;
@@ -136,30 +136,23 @@ class Segment extends SvgElement {
 			this.controlEnd = controlEnd;
 			return this;
 		}
-		const result = new Segment(this, end, controlStart, controlEnd);
+		const result = new this.constructor(this, end, controlStart, controlEnd);
 		return result;
 	}
-	/**
-	 * Creates the SVG controls for the segment.
-	 * @returns {Element} The SVG controls element.
-	 */
-	svg_controls() {
-		const result = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-		if (Point.isInstance(this.start)) {
-			result.appendChild(this.start.svg_controls());
-		} else {
-			[...this.start.svg_controls().children].forEach((control) => {
-				result.appendChild(control);
-			});
+	grow_rel(end, controlStart = null, controlEnd = null) {
+		const ref = this.end || this.start;
+		end.add(ref);
+		if (controlStart) {
+			controlStart.add(ref);
 		}
-		result.appendChild(this.end.svg_controls());
-		if (Point.isInstance(this.controlStart)) {
-			result.appendChild(this.controlStart.svg_controls()).setAttribute('fill', 'blue');
+		if (controlEnd) {
+			controlEnd.add(ref);
 		}
-		if (Point.isInstance(this.controlEnd)) {
-			result.appendChild(this.controlEnd.svg_controls()).setAttribute('fill', 'green');
-		}
-		return result;
+
+		return this.grow(end, controlStart, controlEnd);
+	}
+	clone() {
+		return new this.constructor(this.start.clone(), this.end ? this.end.clone() : null, this.controlStart ? this.controlStart.clone() : null, this.controlEnd ? this.controlEnd.clone() : null);
 	}
 }
 

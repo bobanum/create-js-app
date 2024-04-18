@@ -2,8 +2,42 @@
     padding: 2em;
     grid-column: 1 / -1;
 }
+
 svg {
     fill: transparent;
+    // stroke: #000;
+    // stroke-width: 2;
+}
+
+.anchor {
+    fill: #000;
+    fill-opacity: 1;
+}
+
+.control {
+    stroke: currentColor;
+    stroke-width: 1px;
+
+    &.start {
+        color: #00f;
+    }
+
+    &.end {
+        color: #0f0;
+    }
+
+    line {
+        stroke: currentColor;
+    }
+
+    &.virtual {
+        stroke-dasharray: 1;
+    }
+}
+
+
+path {
+    fill: transparent;
     stroke: #000;
-    stroke-width: 2;
+    stroke-width: 3;
 }
